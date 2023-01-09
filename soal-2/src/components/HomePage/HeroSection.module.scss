@@ -1,0 +1,28 @@
+@import '../../assets/styles/base';
+
+.hero-section {
+  position: relative;
+  margin-top: 15vh;
+}
+
+.hero-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  p {
+    margin: 20px 0;
+  }
+}
+
+.hero-illustration {
+  width: 80%;
+}
+
+.hero-decoration {
+  position: absolute;
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  width: 55vw;
+}

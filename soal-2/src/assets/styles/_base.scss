@@ -1,0 +1,60 @@
+@import './abstracts/';
+@import './layout.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Lato;
+  color: $black;
+}
+
+img {
+  @include setup_size();
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  @include typo_h1();
+}
+
+h2 {
+  @include typo_h2();
+}
+
+h3 {
+  @include typo_h3();
+}
+
+h4 {
+  @include typo_h4();
+}
+
+h5 {
+  @include typo_h5();
+}
+
+p {
+  @include typo_p();
+  margin-bottom: 0;
+}
+
+small {
+  @include typo_small();
+}
+
+input[type='radio'] {
+  border-color: transparent;
+}
+
+.page {
+  @include setup_size(100vw, calc(100vh - 70px));
+  @include flex_center(column);
+  padding: 32px 64px;
+}

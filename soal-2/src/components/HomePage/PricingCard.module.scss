@@ -1,0 +1,92 @@
+@import '../../assets/styles/base';
+
+.pricing-card {
+  border-radius: 16px;
+  border: 2px solid $gray;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+
+  .pricing-card-title {
+    color: $blue;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+}
+
+.pricing-card-best-seller {
+  background: linear-gradient(253.18deg, #c596e0 6.27%, #0366fe 88.99%);
+  border: none;
+
+  .pricing-card-title {
+    color: $white;
+  }
+
+  .pricing-card-price,
+  .pricing-card-price h3 {
+    color: $white;
+  }
+}
+
+.pricing-card-price {
+  line-height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-weight: 800;
+  font-family: 'Open Sans', sans-serif;
+  transform: scale(120%);
+
+  h3 {
+    line-height: 100%;
+  }
+}
+
+.benefits {
+  flex: 1;
+  margin-bottom: 12px;
+}
+
+.benefit {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+
+  small {
+    flex: 1;
+  }
+
+  .check-icon {
+    height: 20px;
+    width: 20px;
+    margin-right: 8px;
+
+    & path:nth-of-type(1) {
+      fill: $gray;
+    }
+  }
+}
+
+.benefit-exclusive .check-icon path:nth-of-type(1) {
+  fill: $blue;
+}
+
+.benefit-best-seller {
+  small {
+    color: $white;
+  }
+
+  .check-icon path {
+    &:nth-of-type(1) {
+      fill: $white;
+    }
+    &:nth-of-type(2) {
+      fill: $gray;
+    }
+  }
+}
+
+.benefit-best-seller.benefit-exclusive .check-icon path:nth-of-type(2) {
+  fill: $blue;
+}

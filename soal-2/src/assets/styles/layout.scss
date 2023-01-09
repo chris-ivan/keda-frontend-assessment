@@ -1,0 +1,13 @@
+@use "./abstracts/" as *;
+
+header {
+  width: 100%;
+  min-height: 70px;
+  padding: 8px 32px;
+
+  @include drop_shadow(0, 5px);
+
+  nav {
+    @include flex_center($dir: row, $gap: 16px);
+  }
+}

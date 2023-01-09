@@ -1,0 +1,134 @@
+@use './utils' as *;
+
+/* IMPORTS AND INITIALIZATION */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* END OF IMPORTS AND INITIALIZATION */
+
+/* DEFAULT VALUES */
+$default_heading_font_family: 'Open Sans', 'Lato', sans-serif;
+$default_content_font_family: 'Lato', sans-serif;
+/* END OF DEFAULT VALUES */
+
+/* LINE HEIGHTS */
+$line_height_heading: 125%;
+$line_height_content: 150%;
+$responsive_line_height_heading: 133%;
+$responsive_line_height_content: 120%;
+/* END OF LINE HEIGHTS */
+
+/* FONT SIZES */
+$h1_size: 48px;
+$h2_size: 42px;
+$h3_size: 28px;
+$h4_size: 20px;
+$h5_size: 14px;
+$p_size: 16px;
+$small_size: 14px;
+
+$responsive_h1_size: 36px;
+$responsive_h2_size: 30px;
+$responsive_h3_size: 16px;
+$responsive_h4_size: 14px;
+$responsive_h5_size: 12px;
+$responsive_p_size: 14px;
+$responsive_small_size: 10px;
+/* END OF FONT SIZES */
+
+/* MAPPING */
+$weights: 400, 500, 600, 700, 800, bold;
+
+$fonts: (
+  'open-sans': 'Open Sans',
+  'lato': 'Lato',
+);
+
+@each $key, $fam in $fonts {
+  @each $w in $weights {
+    .#{$key}-#{$w} {
+      font-family: $fam, sans-serif;
+      font-weight: $w;
+    }
+  }
+}
+/* END OF MAPPING */
+
+/* FONT MIXINS */
+@mixin typo_h1($family: $default_heading_font_family, $weight: 800) {
+  font-size: $h1_size;
+  font-weight: $weight;
+  font-family: $family;
+  line-height: $line_height_heading;
+  @media only screen and (max-width: $bp) {
+    font-size: $responsive_h1_size;
+    line-height: $responsive_line_height_heading;
+  }
+}
+
+@mixin typo_h2($family: $default_heading_font_family, $weight: 800) {
+  font-size: $h2_size;
+  font-weight: $weight;
+  font-family: $family;
+  line-height: $line_height_heading;
+  @media only screen and (max-width: $bp) {
+    font-size: $responsive_h2_size;
+    line-height: $responsive_line_height_heading;
+  }
+}
+
+@mixin typo_h3($family: $default_heading_font_family, $weight: 600) {
+  font-size: $h3_size;
+  font-weight: $weight;
+  font-family: $family;
+  line-height: $line_height_heading;
+  @media only screen and (max-width: $bp) {
+    font-size: $responsive_h3_size;
+    line-height: $responsive_line_height_heading;
+  }
+}
+
+@mixin typo_h4($family: $default_heading_font_family, $weight: 500) {
+  font-size: $h4_size;
+  font-weight: $weight;
+  font-family: $family;
+  line-height: $line_height_heading;
+  @media only screen and (max-width: $bp) {
+    font-size: $responsive_h4_size;
+    line-height: $responsive_line_height_heading;
+  }
+}
+
+@mixin typo_h5($family: $default_content_font_family, $weight: 400) {
+  font-size: $h5_size;
+  font-weight: $weight;
+  font-family: $family;
+  line-height: $line_height_content;
+  @media only screen and (max-width: $bp) {
+    font-size: $responsive_h5_size;
+    line-height: $responsive_line_height_content;
+  }
+}
+
+@mixin typo_p($family: $default_content_font_family, $weight: 400) {
+  font-size: $p_size;
+  font-weight: $weight;
+  font-family: $family;
+  line-height: $line_height_content;
+  @media only screen and (max-width: $bp) {
+    font-size: $responsive_p_size;
+    line-height: $responsive_line_height_content;
+  }
+}
+
+@mixin typo_small($family: $default_content_font_family, $weight: 200) {
+  font-size: $small_size;
+  font-weight: $weight;
+  font-family: $family;
+  line-height: $line_height_content;
+  @media only screen and (max-width: $bp) {
+    font-size: $responsive_small_size;
+    line-height: $responsive_line_height_content;
+  }
+}
+/* END OF FONT MIXINS */

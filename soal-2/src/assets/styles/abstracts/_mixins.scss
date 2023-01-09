@@ -1,0 +1,126 @@
+@use './colors';
+@use './utils';
+
+@mixin setup_size($w: 100%, $h: 100%) {
+  width: $w;
+  height: $h;
+}
+
+@mixin setup_position(
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto,
+  $z: 0
+) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: $z;
+}
+
+@mixin flex_center($dir, $primary: center, $secondary: center, $gap: 0) {
+  display: flex;
+  align-items: $primary;
+  justify-content: $secondary;
+  flex-direction: $dir;
+  gap: $gap;
+}
+
+@mixin grid_center(
+  $dir,
+  $primary: center,
+  $secondary: center,
+  $gap: 0,
+  $primary-opt: 1fr,
+  $secondary-opt: 1fr
+) {
+  display: grid;
+  gap: $gap;
+  align-items: $primary;
+  justify-content: $secondary;
+  @if $dir == 'row' {
+    grid-template-rows: $primary-opt;
+    grid-template-columns: $secondary-opt;
+  } @else {
+    grid-template-rows: $secondary-opt;
+    grid-template-columns: $primary-opt;
+  }
+}
+
+@mixin center_child() {
+  & > * {
+    @include setup_size();
+    @include flex_center(row);
+    margin: auto;
+  }
+}
+
+@mixin drop_shadow($x: 0px, $y: 0px, $blur: 5px, $color: colors.$black) {
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin image_shadow($x: 0px, $y: 0px, $blur: 5px, $color: colors.$black) {
+  filter: drop-shadow($x $y $blur $color);
+}
+
+@mixin text_shadow($x: 0px, $y: 0px, $blur: 5px, $color: colors.$black) {
+  text-shadow: $x $y $blur $color;
+}
+
+@mixin text_shadow_hard($x: 0px, $y: 0px, $blur: 5px, $color: colors.$black) {
+  text-shadow: $x $y $blur $color;
+}
+
+@mixin default_transition($s: 0.3s) {
+  transition: all $s ease;
+}
+
+@mixin absolute_center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin setup_background($url, $pos: center, $size: cover) {
+  background-image: $url;
+  background-position: $pos;
+  background-size: $size;
+  background-repeat: no-repeat;
+}
+
+@mixin horizontal_scroll() {
+  overflow: auto;
+  white-space: nowrap;
+  & > * {
+    display: inline-block;
+  }
+}
+
+@mixin setup_animation($name, $duration: 1s, $type: ease, $delay: 0s) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: $type;
+  animation-delay: $delay;
+}
+
+@mixin ellipsis-multiline(
+  $font-size: 1rem,
+  $line-height: 1,
+  $lines-to-show: 2
+) {
+  display: block;
+  //* Fallback for non-webkit */
+  display: -webkit-box;
+  max-height: $font-size * $line-height * $lines-to-show;
+  //* Fallback for non-webkit */
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

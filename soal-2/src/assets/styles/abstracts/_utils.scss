@@ -1,0 +1,17 @@
+/* BREAKPOINTS AND MEDIA QUERIES */
+
+$bp: 768px;
+
+$portrait: "(orientation: portrait)";
+$landscape: "(orientation: landscape)";
+
+$desktop: "(pointer:fine)";
+$phone: "(pointer: coarse)";
+$tablet: "(pointer:coarse) and (min-width:48em)";
+
+$phone_portrait: "(pointer: coarse) and (orientation: portrait)";
+$phone_landscape: "(pointer: coarse) and (orientation: landscape)";
+$tablet_portrait: "(pointer: coarse) and (orientation: portrait) and (min-width:48em)";
+$tablet_landscape: "(pointer: coarse) and (orientation: landscape) and (min-width:64em)";
+
+/* END OF BREAKPOINTS AND MEDIA QUERIES */

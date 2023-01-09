@@ -1,0 +1,45 @@
+@import '../assets/styles/base';
+
+.img-container {
+  position: absolute;
+  top: -10vh;
+  left: 0;
+  width: 30vw;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+
+  h4 {
+    margin-left: 12px;
+    color: $white;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.nav-links {
+  margin: 40px 0;
+  position: relative;
+}
+
+.nav-link {
+  @include typo_h4;
+  margin-left: 24px;
+}
+
+.nav-link-button {
+  margin-left: 24px;
+}

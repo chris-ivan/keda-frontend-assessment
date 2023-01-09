@@ -1,0 +1,42 @@
+@import '../../assets/styles/base';
+
+.footer {
+  position: relative;
+  margin-top: 10vh;
+  padding: 20vh 0 5vh;
+}
+
+.footer-bg {
+  position: absolute;
+  bottom: -10vh;
+}
+
+.footer-content {
+  position: relative;
+
+  h2,
+  p {
+    color: $white;
+  }
+
+  & > p {
+    width: 60%;
+    margin: 8px 0 20px;
+  }
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+
+  &:nth-of-type(2) {
+    align-items: flex-end;
+  }
+
+  .footer-contact-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+  }
+}
