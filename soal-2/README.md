@@ -59,4 +59,5 @@ Ilustrasi yang digunakan dalam assessment ini diambil dari:
 - Favicon & Metadata
 
 ## Notes
-Repository ini sudah docker-ready. Untuk informasi lebih lanjut, silakan pelajari folder `/nginx` dan `Dockerfile`.
+- Responsive yang ditangani untuk project ini hanya 2: mobile dan desktop
+- Repository ini sudah docker-ready. Untuk informasi lebih lanjut, silakan pelajari folder `/nginx` dan `Dockerfile`.

@@ -5,7 +5,7 @@
   margin-top: calc($navbar-height + 15vh);
 
   @media screen and (max-width: 768px) {
-    margin-top: calc($navbar-height + 5vh);
+    margin-top: calc($navbar-height + 20px);
   }
 }
 
@@ -29,7 +29,7 @@
 }
 
 .hero-illustration {
-  width: 80%;
+  width: 70%;
 
   @media screen and (max-width: 768px) {
     width: 90%;

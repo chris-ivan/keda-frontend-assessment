@@ -1,0 +1,205 @@
+@import '../../assets/styles/base';
+
+.nav-container {
+  height: $navbar-height;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  transition-property: background-color, height;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  overflow: hidden;
+
+  @media screen and (max-width: $mobile-width) {
+    background: $light-blue;
+    height: 72px;
+
+    .nav-links {
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .nav-link {
+      color: $white;
+    }
+  }
+}
+
+.nav-container-mobile-open {
+  background: $light-blue;
+  height: 200px;
+  transition: height 0.5s ease-in-out;
+
+  .nav-links {
+    pointer-events: unset;
+    opacity: 1;
+  }
+}
+
+.nav-container-scrolled {
+  background: $light-blue;
+
+  .nav-links {
+    margin: 0;
+  }
+
+  .nav-link {
+    color: $white;
+  }
+}
+
+.img-container {
+  position: absolute;
+  top: -10vh;
+  left: 0;
+  width: 30vw;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+
+  h4 {
+    margin-left: 12px;
+    color: $white;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    margin: 20px 0;
+  }
+}
+
+.nav-links {
+  margin: 40px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  transition-property: margin, opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+
+  @media screen and (max-width: $mobile-width) {
+    margin: 0 0 12px 0;
+    display: block;
+  }
+}
+
+.nav-link {
+  position: relative;
+  @include typo_h4;
+  margin: 0 0 0 20px;
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    transition: background 0.5s ease-in-out;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    margin: 12px 0;
+  }
+}
+
+.active-nav-link {
+  .nav-link::after {
+    background: $white;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    .nav-link {
+      color: $black;
+
+      &::after {
+        background: transparent;
+      }
+    }
+  }
+}
+
+.nav-link-button {
+  margin: 0 0 0 20px;
+
+  @media screen and (max-width: $mobile-width) {
+    margin: 6px 0 0;
+    & > div > a {
+      font-size: 16px;
+      padding: 4px 12px;
+    }
+  }
+}
+
+.nav-mobile-button {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  position: relative;
+  margin: auto 0;
+  display: grid;
+  place-items: center;
+}
+
+.nav-mobile-button-line,
+.nav-mobile-button-line::before,
+.nav-mobile-button-line::after {
+  width: 32px;
+  height: 4px;
+  @include setup_size(32px, 4px);
+  content: '';
+  background: $white;
+
+  transition-property: transform, opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.nav-mobile-button-line {
+  &::before,
+  &::after {
+    position: absolute;
+  }
+  &::before {
+    transform: translateY(-250%);
+  }
+  &::after {
+    transform: translateY(250%);
+  }
+}
+
+.nav-mobile-button-line-active {
+  transform: rotate(45deg);
+  &::before,
+  &::after {
+    opacity: 1;
+  }
+  &::before {
+    transform: translateY(0) rotate(90deg);
+  }
+  &::after {
+    transform: translateY(0) rotate(0);
+    opacity: 0;
+  }
+}

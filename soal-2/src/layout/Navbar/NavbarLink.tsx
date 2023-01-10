@@ -1,25 +1,16 @@
 import { FC, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { COLOR, PATH } from '../utils/constant';
+import { PATH } from '../../utils/constant';
 
 import styles from './Navbar.module.scss';
 
 interface INavbarLink {
   to: string;
   children: string;
+  isActive: boolean;
 }
 
-const getNavbarLinkStyle = () => {
-  const isActive = false;
-
-  return {
-    color: COLOR.BLACK,
-    textUnderlineOffset: isActive ? '8px' : '0',
-    textDecoration: isActive ? `underline ${COLOR.BLUE}` : 'none',
-  };
-};
-
-const NavbarLink: FC<INavbarLink> = ({ to, children }) => {
+const NavbarLink: FC<INavbarLink> = ({ to, children, isActive }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -50,7 +41,10 @@ const NavbarLink: FC<INavbarLink> = ({ to, children }) => {
   }, [location.pathname]);
 
   return (
-    <div style={getNavbarLinkStyle()} onClick={() => scrollTo(to)}>
+    <div
+      className={isActive ? styles['active-nav-link'] : undefined}
+      onClick={() => scrollTo(to)}
+    >
       <span className={styles['nav-link']}>{children}</span>
     </div>
   );
