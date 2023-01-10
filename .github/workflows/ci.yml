@@ -21,4 +21,4 @@ jobs:
       - name: Install dependencies
         run: cd soal-1 && npm install
       - name: Run Jest tests
-        run: npx jest --testPathPattern=soal-1
+        run: cd soal-1 && npm test
