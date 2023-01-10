@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { FC, useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { PATH } from '../../utils/constant';
 
@@ -9,7 +9,7 @@ import SvgContainer from '../../components/general/SvgContainer';
 
 import NavLinks from './NavbarLinks';
 
-const MobileNavbar = () => {
+const MobileNavbar: FC = () => {
   const navRef = useRef<HTMLDivElement>(null);
   const [isOpen, setOpen] = useState<boolean>(false);
 
@@ -23,12 +23,20 @@ const MobileNavbar = () => {
   const buttonClass = isOpen && styles['nav-mobile-button-line-active'];
   const buttonLineClass = `${buttonClass} ${styles['nav-mobile-button-line']}`;
 
+  const handleClickLink = () => {
+    setOpen(false);
+  };
+
   return (
     <nav>
       <SvgContainer className={styles['img-container']} src={BackgroundBlob} />
       <div ref={navRef} className={containerClassName}>
         <div className={`page-container ${styles['nav']}`}>
-          <NavLink className={styles['nav-logo']} to={PATH.HOME}>
+          <NavLink
+            className={styles['nav-logo']}
+            to={PATH.HOME}
+            onClick={handleClickLink}
+          >
             <img src={Logo} alt="web-erp logo" />
             <h4>HOME</h4>
           </NavLink>
@@ -37,7 +45,7 @@ const MobileNavbar = () => {
           </div>
         </div>
         <div className={'page-container'}>
-          <NavLinks />
+          <NavLinks onClickLink={handleClickLink} />
         </div>
       </div>
     </nav>

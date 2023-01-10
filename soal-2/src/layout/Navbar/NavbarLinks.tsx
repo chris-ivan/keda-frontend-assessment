@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { FC, useState, useEffect, useCallback } from 'react';
 import { PATH, HOMEPAGE_SECTION_ID } from '../../utils/constant';
 
 import styles from './Navbar.module.scss';
@@ -24,7 +24,11 @@ const NAVBAR_LINKS = [
   },
 ];
 
-const DesktopNavLink = () => {
+interface INavbarLinks {
+  onClickLink?: () => void;
+}
+
+const DesktopNavLink: FC<INavbarLinks> = ({ onClickLink }) => {
   const { username } = useSelector(userSelector) as IUserState;
   const [activeSectionId, setActiveSectionId] = useState<string>('');
 
@@ -57,17 +61,22 @@ const DesktopNavLink = () => {
   return (
     <div className={styles['nav-links']}>
       {NAVBAR_LINKS.map(({ label, id }) => (
-        <NavbarLink key={id} to={id} isActive={id == activeSectionId}>
+        <NavbarLink
+          key={id}
+          to={id}
+          isActive={id == activeSectionId}
+          onClick={onClickLink}
+        >
           {label}
         </NavbarLink>
       ))}
       <div className={styles['nav-link-button']}>
         {username ? (
-          <Button to={PATH.PROFILE} type="secondary">
+          <Button to={PATH.PROFILE} onClick={onClickLink} type="secondary">
             PROFILE
           </Button>
         ) : (
-          <Button to={PATH.LOGIN} type="secondary">
+          <Button to={PATH.LOGIN} onClick={onClickLink} type="secondary">
             LOGIN
           </Button>
         )}

@@ -8,13 +8,16 @@ interface INavbarLink {
   to: string;
   children: string;
   isActive: boolean;
+  onClick?: () => void;
 }
 
-const NavbarLink: FC<INavbarLink> = ({ to, children, isActive }) => {
+const NavbarLink: FC<INavbarLink> = ({ to, children, isActive, onClick }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
   const scrollTo = (id: string) => {
+    onClick && onClick();
+
     if (location.pathname !== PATH.HOME) {
       window.location.assign(`/#${id}`);
     }

@@ -8,6 +8,7 @@ interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
   type?: 'primary' | 'secondary';
   fullWidth?: boolean;
   to?: string;
+  onClick?: () => void;
 }
 
 const getButtonClassName = (button: IButton): string => {
@@ -25,7 +26,7 @@ const Button: FC<IButton> = (buttonProps) => {
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    rest.onClick && rest.onClick(e);
+    rest.onClick && rest.onClick();
   };
 
   let buttonContainerClass = styles['button-container'];
@@ -36,7 +37,11 @@ const Button: FC<IButton> = (buttonProps) => {
   if (to) {
     return (
       <Ripples className={buttonContainerClass}>
-        <Link to={to} className={getButtonClassName(buttonClassProps)}>
+        <Link
+          onClick={rest.onClick}
+          to={to}
+          className={getButtonClassName(buttonClassProps)}
+        >
           {buttonProps.children}
         </Link>
       </Ripples>

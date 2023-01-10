@@ -4,14 +4,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: calc($navbar-height + 5vh);
+  height: 99vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: $navbar-height;
 
   h2 {
     margin-bottom: 20px;
-  }
-
-  @media screen and (max-width: $mobile-width) {
-    padding-top: calc($navbar-height + 20vh);
   }
 }
 

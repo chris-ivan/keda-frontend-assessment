@@ -7,7 +7,7 @@ import Logo from '../../assets/images/icon/logo.svg';
 import BackgroundBlob from '../../assets/images/decoration/decoration-logo.svg';
 import SvgContainer from '../../components/general/SvgContainer';
 
-import DesktopNavLinks from './NavbarLinks';
+import NavLinks from './NavbarLinks';
 
 const DesktopNavbar = () => {
   const navRef = useRef<HTMLDivElement>(null);
@@ -47,7 +47,7 @@ const DesktopNavbar = () => {
             <img src={Logo} alt="web-erp logo" />
             <h4>HOME</h4>
           </NavLink>
-          <DesktopNavLinks />
+          <NavLinks />
         </div>
       </div>
     </nav>
