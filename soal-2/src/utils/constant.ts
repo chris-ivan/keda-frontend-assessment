@@ -6,6 +6,13 @@ export const PATH = {
   PROFILE: '/profile',
 };
 
+export const HOMEPAGE_SECTION_ID = {
+  HERO: 'hero_section',
+  ABOUT: 'about_section',
+  PRICING: 'pricing_section',
+  CONTACT: 'contact_section',
+};
+
 export const COLOR = {
   BLACK: '#231d1b',
   BLUE: '#0667fd',

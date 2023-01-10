@@ -1,10 +1,24 @@
 @import '../../assets/styles/base';
 
+.button-container {
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.button-container-full-width {
+  width: 100%;
+
+  button {
+    width: 100%;
+  }
+}
+
 .button {
   border-radius: 8px;
   border: 2px solid $blue;
-  cursor: pointer;
   font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .button-large {

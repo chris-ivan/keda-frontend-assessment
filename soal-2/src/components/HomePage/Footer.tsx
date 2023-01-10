@@ -6,6 +6,7 @@ import FooterBackground from '../../assets/images/decoration/decoration-footer.s
 import InstagramLogo from '../../assets/images/icon/icon-instagram.svg';
 import LinkedInLogo from '../../assets/images/icon/icon-linkedin.svg';
 import WhatsAppLogo from '../../assets/images/icon/icon-whatsapp.svg';
+import { HOMEPAGE_SECTION_ID } from '../../utils/constant';
 
 const CONTACTS = [
   {
@@ -24,7 +25,7 @@ const CONTACTS = [
 
 const Footer: FC = () => {
   return (
-    <footer className={styles['footer']}>
+    <footer className={styles['footer']} id={HOMEPAGE_SECTION_ID.CONTACT}>
       <SvgContainer src={FooterBackground} className={styles['footer-bg']} />
       <div className={`page-container ${styles['footer-content']}`}>
         <h2>CONTACT</h2>

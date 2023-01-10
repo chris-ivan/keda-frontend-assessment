@@ -5,14 +5,21 @@
   margin: 0 auto;
 }
 
-// @keyframes css-gradient {
-//   0% {
-//     fill: linear-gradient(253.18deg, #c596e0 6.27%, #0366fe 88.99%);
-//   }
-//   50% {
-//     fill: linear-gradient(253.18deg, #0366fe 6.27%, #c596e0 88.99%);
-//   }
-//   100% {
-//     fill: linear-gradient(253.18deg, #c596e0 6.27%, #0366fe 88.99%);
-//   }
-// }
+// for page fade transitions
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms ease-out;
+}

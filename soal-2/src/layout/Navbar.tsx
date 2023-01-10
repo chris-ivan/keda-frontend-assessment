@@ -1,6 +1,5 @@
-import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
-import { COLOR, PATH } from '../utils/constant';
+import { PATH, HOMEPAGE_SECTION_ID } from '../utils/constant';
 
 import styles from './Navbar.module.scss';
 import Logo from '../assets/images/icon/logo.svg';
@@ -8,28 +7,14 @@ import BackgroundBlob from '../assets/images/decoration/decoration-logo.svg';
 import SvgContainer from '../components/general/SvgContainer';
 import Button from '../components/general/Button';
 
-interface INavbarLink {
-  to: string;
-  children: string;
-}
-
-const getNavbarLinkStyle = ({ isActive }: any) => {
-  return {
-    color: COLOR.BLACK,
-    textUnderlineOffset: isActive ? '8px' : '0',
-    textDecoration: isActive ? `underline ${COLOR.BLUE}` : 'none',
-  };
-};
-
-const NavbarLink: FC<INavbarLink> = ({ to, children }) => {
-  return (
-    <NavLink style={getNavbarLinkStyle} to={to}>
-      <span className={styles['nav-link']}>{children}</span>
-    </NavLink>
-  );
-};
+import { useSelector } from 'react-redux';
+import { IUserState } from '../interfaces/userState';
+import { userSelector } from '../features/user/userSlice';
+import NavbarLink from './NavbarLink';
 
 const Navbar = () => {
+  const { username } = useSelector(userSelector) as IUserState;
+
   return (
     <nav>
       <SvgContainer className={styles['img-container']} src={BackgroundBlob} />
@@ -39,12 +24,20 @@ const Navbar = () => {
           <h4>HOME</h4>
         </NavLink>
         <div className={styles['nav-links']}>
-          <NavbarLink to={PATH.HOME}>ABOUT</NavbarLink>
-          <NavbarLink to={PATH.LOGIN}>PRICING</NavbarLink>
-          <NavbarLink to={PATH.PROFILE}>CONTACT</NavbarLink>
-          <NavLink to={PATH.LOGIN} className={styles['nav-link-button']}>
-            <Button type="secondary">LOGIN</Button>
-          </NavLink>
+          <NavbarLink to={HOMEPAGE_SECTION_ID.ABOUT}>ABOUT</NavbarLink>
+          <NavbarLink to={HOMEPAGE_SECTION_ID.PRICING}>PRICING</NavbarLink>
+          <NavbarLink to={HOMEPAGE_SECTION_ID.CONTACT}>CONTACT</NavbarLink>
+          <div className={styles['nav-link-button']}>
+            {username ? (
+              <Button to={PATH.PROFILE} type="secondary">
+                PROFILE
+              </Button>
+            ) : (
+              <Button to={PATH.LOGIN} type="secondary">
+                LOGIN
+              </Button>
+            )}
+          </div>
         </div>
       </div>
     </nav>

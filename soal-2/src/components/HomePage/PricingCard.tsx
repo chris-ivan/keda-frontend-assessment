@@ -56,7 +56,7 @@ const PricingCard: FC<IPricingContent> = (pricingContent) => {
           <Benefit key={index} text={benefit} type={type} isExclusive />
         ))}
       </div>
-      <Button type="secondary" size="small">
+      <Button fullWidth type="secondary" size="small">
         DAFTAR
       </Button>
     </div>

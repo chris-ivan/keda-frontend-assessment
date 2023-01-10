@@ -10,6 +10,7 @@
 .nav {
   display: flex;
   justify-content: space-between;
+  height: 100px;
 }
 
 .nav-logo {
@@ -33,11 +34,14 @@
 .nav-links {
   margin: 40px 0;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .nav-link {
   @include typo_h4;
   margin-left: 24px;
+  cursor: pointer;
 }
 
 .nav-link-button {
