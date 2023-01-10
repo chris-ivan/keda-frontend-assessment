@@ -39,10 +39,15 @@ const ProfilePage = () => {
               </p>
             </div>
             <div className={styles['button-container']}>
-              <Button size="small" type="secondary" onClick={handleLogout}>
+              <Button
+                fullWidth
+                size="small"
+                type="secondary"
+                onClick={handleLogout}
+              >
                 LOGOUT
               </Button>
-              <Button to={PATH.HOME} size="small">
+              <Button fullWidth to={PATH.HOME} size="small">
                 HOMEPAGE
               </Button>
             </div>

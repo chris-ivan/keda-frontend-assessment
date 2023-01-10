@@ -19,11 +19,15 @@ const AboutSection: FC = () => {
       <div className="page-container">
         <FadeInElement>
           <h2>ABOUT</h2>
-          <div className={styles['about-content']}>
+        </FadeInElement>
+        <div className={styles['about-content']}>
+          <FadeInElement>
             <SvgContainer
               src={Illustration1}
               className={styles['about-illustration-1']}
             />
+          </FadeInElement>
+          <FadeInElement>
             <div>
               <h3>ERP IS DESIGNED WITH ENTREPRENEURS IN MIND</h3>
               <p>
@@ -32,10 +36,10 @@ const AboutSection: FC = () => {
                 – growing your business.
               </p>
             </div>
-          </div>
-        </FadeInElement>
-        <FadeInElement>
-          <div className={styles['about-content']}>
+          </FadeInElement>
+        </div>
+        <div className={styles['about-content']}>
+          <FadeInElement>
             <div>
               <h3>OVERCOME YOUR BUSINESS CHALLENGES</h3>
               <p>
@@ -45,18 +49,22 @@ const AboutSection: FC = () => {
                 from our users.
               </p>
             </div>
+          </FadeInElement>
+          <FadeInElement>
             <SvgContainer
               src={Illustration2}
               className={styles['about-illustration-2']}
             />
-          </div>
-        </FadeInElement>
-        <FadeInElement>
-          <div className={styles['about-content']}>
+          </FadeInElement>
+        </div>
+        <div className={styles['about-content']}>
+          <FadeInElement>
             <SvgContainer
               src={Illustration3}
               className={styles['about-illustration-3']}
             />
+          </FadeInElement>
+          <FadeInElement>
             <div>
               <p>
                 Our company is dedicated to helping entrepreneurs streamline
@@ -69,8 +77,8 @@ const AboutSection: FC = () => {
                 based on the feedback of our users.
               </p>
             </div>
-          </div>
-        </FadeInElement>
+          </FadeInElement>
+        </div>
       </div>
     </section>
   );

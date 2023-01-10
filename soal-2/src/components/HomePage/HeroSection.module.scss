@@ -2,7 +2,11 @@
 
 .hero-section {
   position: relative;
-  margin-top: 15vh;
+  margin-top: calc($navbar-height + 15vh);
+
+  @media screen and (max-width: 768px) {
+    margin-top: calc($navbar-height + 5vh);
+  }
 }
 
 .hero-content {
@@ -13,10 +17,24 @@
   p {
     margin: 20px 0;
   }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+
+    h1 {
+      margin-top: 40px;
+    }
+  }
 }
 
 .hero-illustration {
   width: 80%;
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 .hero-decoration {
@@ -25,4 +43,10 @@
   right: 0;
   bottom: 0;
   width: 55vw;
+
+  @media screen and (max-width: 768px) {
+    top: 5%;
+    bottom: unset;
+    width: 90vw;
+  }
 }

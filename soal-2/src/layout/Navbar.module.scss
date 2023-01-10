@@ -1,5 +1,35 @@
 @import '../assets/styles/base';
 
+.nav-container {
+  height: $navbar-height;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  transition-property: background-color, height;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+
+  @media screen and (max-width: $mobile-width) {
+    background: $light-blue;
+    height: 80px !important;
+  }
+}
+
+.nav-container-scrolled {
+  background: $light-blue;
+
+  .nav-links {
+    margin: 0;
+  }
+
+  .nav-link {
+    color: $white;
+  }
+}
+
 .img-container {
   position: absolute;
   top: -10vh;
@@ -10,7 +40,6 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  height: 100px;
 }
 
 .nav-logo {
@@ -36,12 +65,14 @@
   position: relative;
   display: flex;
   align-items: center;
+  transition: margin 0.5s ease-in-out;
 }
 
 .nav-link {
   @include typo_h4;
   margin-left: 24px;
   cursor: pointer;
+  transition: color 0.5s ease-in-out;
 }
 
 .nav-link-button {

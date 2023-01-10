@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: calc($navbar-height + 5vh);
 
   h2 {
     margin-bottom: 20px;
@@ -12,6 +13,10 @@
 
 .profile-page-illustration {
   height: 35vh;
+
+  @media screen and (max-width: $mobile-width) {
+    margin: 20px 0;
+  }
 }
 
 .profile-page-text {
@@ -21,10 +26,36 @@
   p {
     text-align: center;
   }
+
+  @media screen and (max-width: $mobile-width) {
+    margin: 32px 0;
+    width: 100%;
+
+    p {
+      text-align: left;
+    }
+  }
 }
 
 .button-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 12px;
+
+  @media screen and (max-width: $mobile-width) {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+
+    .react-ripples {
+      width: 100% !important;
+    }
+
+    .react-ripples,
+    button,
+    a {
+      width: 100% !important;
+      text-align: center;
+    }
+  }
 }

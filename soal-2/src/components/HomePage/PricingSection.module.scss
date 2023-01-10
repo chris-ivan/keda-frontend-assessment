@@ -2,15 +2,30 @@
 
 .pricing-section {
   margin-top: 10vh;
+
+  @media screen and (max-width: $mobile-width) {
+    margin-top: 60px;
+  }
 }
 
 .pricing-title {
   text-align: center;
   margin-bottom: 7vh;
+
+  @media screen and (max-width: $mobile-width) {
+    text-align: left;
+    margin-bottom: 24px;
+  }
 }
 
 .pricing-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 32px;
+
+  @media screen and (max-width: $mobile-width) {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
+  }
 }

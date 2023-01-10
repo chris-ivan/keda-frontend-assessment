@@ -58,3 +58,6 @@ input[type='radio'] {
   @include flex_center(column);
   padding: 32px 64px;
 }
+
+$navbar-height: 100px;
+$mobile-width: 768px;

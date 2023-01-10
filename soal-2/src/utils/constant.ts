@@ -16,6 +16,7 @@ export const HOMEPAGE_SECTION_ID = {
 export const COLOR = {
   BLACK: '#231d1b',
   BLUE: '#0667fd',
+  LIGHT_BLUE: '#27c2f6',
   GRAY: '#cccccc',
   WHITE: '#ffffff',
 };

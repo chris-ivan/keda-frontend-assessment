@@ -4,11 +4,28 @@
   position: relative;
   margin-top: 10vh;
   padding: 20vh 0 5vh;
+
+  @media screen and (max-width: $mobile-width) {
+    margin-top: 0;
+  }
 }
 
 .footer-bg {
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: -10vh;
+  width: 100%;
+  min-width: 80vw;
+
+  @media screen and (max-width: $mobile-width) {
+    left: unset;
+    right: 0;
+    transform: none;
+    bottom: 0;
+    width: 100vw;
+    height: 50vh;
+  }
 }
 
 .footer-content {
