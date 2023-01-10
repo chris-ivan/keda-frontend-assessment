@@ -19,6 +19,6 @@ jobs:
       - name: Clean up
         run: rm -rf node_modules
       - name: Install dependencies
-        run: cd soal-1 && npm ci
+        run: cd soal-1 && npm install
       - name: Run Jest tests
         run: npx jest --testPathPattern=soal-1
