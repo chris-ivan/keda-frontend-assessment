@@ -1,4 +1,4 @@
-# SOAL 1
+# KeDA Software House Frontend Assessment - Soal Test 1
 Christopher Ivan Gunardi
 
 Soal: https://pastebin.com/u78iPNWc
